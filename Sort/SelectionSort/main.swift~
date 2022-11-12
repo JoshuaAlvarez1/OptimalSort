@@ -1,0 +1,43 @@
+
+
+// ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩
+// DO NOT ALTER THE TEXT BETWEEN THESE LINES =========={M{E{R{L{I{N{1}N}I}L}R}E}M}=====================================
+let unsortedIntegers = ["y", "D", "c", "x", "A"]
+// DO NOT ALTER THE TEXT BETWEEN THESE LINES =========={M{E{R{L{I{N{1}N}I}L}R}E}M}=====================================
+// ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧
+
+
+// Add your code below:
+import Foundation
+var a = unsortedIntegers
+func selectionSort(_ array: [String]) {
+
+    var temp = 0
+    var total = 0
+    var pass = 0
+    var a = array                    // 2
+
+    for x in 0 ..< a.count - 1 {
+        print("Pass: \(pass), Swaps: \(temp)/\(total), Array: \(a)")
+        var lowest = x
+       total += 1
+       pass += 1
+       temp = 1
+        let next = x + 1
+        for y in next ..< a.count {
+           
+            if a[y] < a[lowest] {
+                lowest = y
+            }
+        }
+
+        if x != lowest {
+           
+            a.swapAt(x, lowest)
+          
+        }
+       // print("Pass: \(pass), Swaps: \(temp)/\(total), Array: \(a)") 
+    }
+    print("Pass: \(pass), Swaps: \(temp)/\(total), Array: \(a)")
+}
+selectionSort(a)

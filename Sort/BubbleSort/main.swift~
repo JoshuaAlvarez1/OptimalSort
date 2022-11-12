@@ -1,0 +1,44 @@
+
+
+// ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩
+// DO NOT ALTER THE TEXT BETWEEN THESE LINES =========={M{E{R{L{I{N{1}N}I}L}R}E}M}=====================================
+let unsortedIntegers = ["me", "you", "us", "they", "them"]
+// DO NOT ALTER THE TEXT BETWEEN THESE LINES =========={M{E{R{L{I{N{1}N}I}L}R}E}M}=====================================
+// ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧
+
+
+// Add your code below:
+
+func swap(integers:inout [String], firstIndex: Int, secondIndex: Int){
+    let temp = integers[firstIndex]
+    integers[firstIndex] = integers[secondIndex]
+    integers[secondIndex] = temp
+}
+
+func sort() {
+var tempcount = 0
+var totalcount = 0
+var functionInvoke = true
+var array = unsortedIntegers
+print("Pass: \(0), Swaps: \(tempcount)/\(totalcount), Array: \(array)")
+while(functionInvoke){
+    for i in 0 ..< array.count {
+        for j in 1 ..< array.count - i{
+            if(array[j] < array[j-1]){
+                functionInvoke = true
+                tempcount += 1
+                totalcount += 1
+                swap(integers:&array, firstIndex: j, secondIndex: j-1)
+            }
+        }
+        print("Pass: \(i+1), Swaps: \(tempcount)/\(totalcount), Array: \(array)")
+    
+if(tempcount == 0){
+    functionInvoke = false
+    break
+}
+tempcount = 0
+    }
+}
+}
+sort()
